@@ -1,27 +1,24 @@
 html, 
 body {
-    background: #090A0F;
     background: #03040a; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #03040a 0%, #11171e 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#03040a), color-stop(100%,#11171e)); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover,  #03040a 0%,#11171e 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover,  #03040a 0%,#11171e 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover,  #03040a 0%,#11171e 100%); /* IE10+ */
-background: radial-gradient(ellipse at center,  #03040a 0%,#11171e 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03040a', endColorstr='#11171e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
     color: #efefef;
+
+    letter-spacing: -1px;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
 }
 
 .bgGradient{
     position: absolute;
-    width: 1000%;
-    left: -900%;
+    width: 340%;
+    left: -230%;
     height: 30%;
     top: 30%;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#353c59), color-stop(71%,#3f4c6b), color-stop(71%,#ffffff), color-stop(72%,#ffffff), color-stop(73%,#272d42), color-stop(100%,#272d42)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #353c59 0%,#3f4c6b 71%,#ffffff 71%,#ffffff 72%,#272d42 73%,#272d42 100%); /* Chrome10+,Safari5.1+ */
-    background: linear-gradient(to bottom,  #353c59 0%,#3f4c6b 71%,#ffffff 71%,#ffffff 72%,#272d42 73%,#272d42 100%); /* W3C */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#353c59), color-stop(71%,#3f4c6b), color-stop(71%,#ffffff), color-stop(72%,#ffffff), color-stop(73%,#272d42), color-stop(100%,#272d42));
+    background: -webkit-linear-gradient(top,  #353c59 0%,#3f4c6b 71%,#ffffff 71%,#ffffff 72%,#272d42 73%,#272d42 100%);
+    background: linear-gradient(to bottom,  #353c59 0%,#3f4c6b 71%,#ffffff 71%,#ffffff 72%,#272d42 73%,#272d42 100%); 
 }
 
 .talk-title {
@@ -34,7 +31,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03040a', end
     font-size: 72px;
 }
 
-.step.slide .years {
+.step .years {
     width: 5000%;
 }
 .year {
@@ -66,15 +63,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03040a', end
     height: 2px;
     background: #111;
     -webkit-transform: rotateX(86deg) rotateY(0deg) rotateZ(0deg) scaleY(10);
-    -webkit-box-shadow:  0px 0px 20px 15px #1B212D;
+   /* -webkit-box-shadow:  0px 0px 20px 15px #1B212D;*/
 }
 
 
 .slide .toaster {
     -webkit-transition: all 500ms ease-in 0;
-    -moz-transition: all 500ms ease-in 0;
-    -ms-transition: all 500ms ease-in 0;
-    -o-transition: all 500ms ease-in 0;
     transition: all 500ms ease-in 0;
     position: absolute;
     top: 80%;
@@ -83,9 +77,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03040a', end
 .slide.active .toaster {
     top: 0;
     -webkit-transition: all 500ms ease-in 400ms;
-    -moz-transition: all 500ms ease-in 400ms;
-    -ms-transition: all 500ms ease-in 400ms;
-    -o-transition: all 500ms ease-in 400ms;
     transition: all 500ms ease-in 400ms;
 }
 
@@ -108,24 +99,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03040a', end
     border-radius: 5px;
 }
 
-.video {
-    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(2deg);
-    text-align: center;
-}
-
 .slide .delay {
     -webkit-transition-delay: 0;
-    -moz-transition-delay: 0;
-    -ms-transition-delay: 0;
-    -o-transition-delay: 0;
     transition-delay: 0;
     top: 700px;
 }
 .slide.active .delay {
     -webkit-transition-delay: 2s;
-    -moz-transition-delay: 2s;
-    -ms-transition-delay: 2s;
-    -o-transition-delay: 2s;
     transition-delay: 2s;
 }
 
@@ -164,18 +144,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03040a', end
 .browser-chrome img {
     position: relative;
     -webkit-transition: all 0ms ease-in-out 1500ms;
-    -moz-transition: all 0ms ease-in-out 1500ms;
-    -ms-transition: all 0ms ease-in-out 1500ms;
-    -o-transition: all 0ms ease-in-out 500ms;
     transition: all 0ms ease-in-out 500ms;
     top: 0;
 }
 .active .browser-chrome img {
     top: -500px;
     -webkit-transition: all 4000ms ease-in-out 2000ms;
-    -moz-transition: all 4000ms ease-in-out 2000ms;
-    -ms-transition: all 4000ms ease-in-out 2000ms;
-    -o-transition: all 4000ms ease-in-out 2000ms;
     transition: all 4000ms ease-in-out 2000ms;
 }
 
