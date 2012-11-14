@@ -1,0 +1,976 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scaling YUI in the Enterprise | by Kevin Lamping @klamping</title>
+    
+    <meta name="author" content="Kevin Lamping" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/skin-yui.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="codemirror/theme/cobalt.css">
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/css/css.js"></script>
+    <script src="codemirror/mode/clike/clike.js"></script>
+    <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+    <script>
+
+    var stepCallbacks = [];
+
+    var addStepCallback = function(stepId, callback) {
+        window.stepCallbacks[stepId] = callback;
+    };
+
+    document.addEventListener("impress:stepenter", function (ev) {
+        if(stepCallbacks[ev.srcElement.id]) {
+            stepCallbacks[ev.srcElement.id]();
+        }
+    }, false);
+    </script>
+
+</head>
+
+<body>
+
+<div id="impress">
+
+    <!-- TODO
+        Pretty up code display
+    -->
+
+    <div class="step slide" data-rotate-x="90" data-scale="30" data-x="-150000" data-z="-6000" data-rotate-y="-55">
+        <!-- Slide Title Overview -->
+    </div>
+
+
+
+
+    <!-- New Year!!! -->
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-510000" data-y="-10" data-z="4500">
+        <!-- <h1 class="year">1922</h1> -->
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-510000" data-y="-2140" data-z="-1000">
+        <div class="toaster photo alt">
+            <img src="images/army-march.jpg" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-510000" data-y="-2140" data-z="-2000">
+        <div class="toaster" style="text-align:center;">
+            <img src="images/usaa-logo.png" width="600" />
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-190000" data-y="-10" data-z="4500">
+        <!-- <h1 class="year">2003</h1> -->
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-190000" data-y="-2140" data-z="-1000">
+        <div class="toaster photo">
+            <img src="images/build-tent.jpg" width="800" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-190000" data-y="-2140" data-z="-2000">
+        <div class="toaster photo alt">
+            <img src="images/ships.jpg" width="800" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-190000" data-y="-2140" data-z="-3000">
+        <div class="toaster photo">
+            <img src="images/tent.jpg" width="800" />
+        </div>
+    </div>
+
+
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-110000" data-y="-10" data-z="4500">
+        <!-- <h1 class="year">2011</h1> -->
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-1000">
+        <div class="toaster photo">
+            <img src="images/fear-darwin-smaller.jpg" />
+        </div>
+    </div>
+
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-2000">
+        <div class="toaster">
+            <img src="images/yui-logo.png" width="900"/>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-3000">
+        <div class="toaster">
+            <div class="browser-chrome www-usaa">
+                <img src="images/retirement.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-4000">
+        <div class="toaster photo alt">
+            <img src="images/js-slow.jpg" width="600" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-5000">
+        <div class="toaster photo">
+            <img src="images/700-ie8.png" style="border: 0;"/>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<!-- NEW YEAR!!! -->
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-120000" data-y="-10" data-z="4500">
+        <!-- <h1 class="year">2010</h1> -->
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-1000">
+        <div class="toaster photo alt">
+            <img src="images/logo-wicket.png" width="500" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-2000">
+        <div class="toaster">
+            <div class="browser-chrome www-yui2-home">
+                <img src="images/yui2.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
+        <div class="toaster">
+            <textarea class="code" data-mode="clike">TabView tabViewV1 = new TabView("tabViewV1", true);
+add(tabViewV1);
+
+tabViewV1.addTab(
+    new Model<String>("Foo"), 
+    new Tab(tabViewV1.newChildId(), 
+    "Foo Content")
+);
+tabViewV1.addTab(
+    new Model<String>("Bar"), 
+    new Tab(tabViewV1.newChildId(), 
+    "Bar Content")
+);
+            </textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-4000">
+        <div class="toaster photo">
+            <img src="images/java-js.jpg" width="800" />
+            <!-- http://www.morguefile.com/archive/display/174528 -->
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-5000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><!doctype>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<wicket:extend>
+    <div wicket:id="tabViewV1">[My tab view]</div>
+</wicket:extend>
+</body>
+</html></textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
+        <div class="toaster">
+            <textarea class="code" data-mode="clike">TabView tabViewV1 = new TabView("tabViewV1", true);
+add(tabViewV1);
+
+tabViewV1.addTab(
+    new Model<String>("Foo"), 
+    new Tab(tabViewV1.newChildId(), 
+    "Foo Content")
+);
+tabViewV1.addTab(
+    new Model<String>("Bar"), 
+    new Tab(tabViewV1.newChildId(), 
+    "Bar Content")
+);
+            </textarea>
+        </div>
+    </div>
+
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-6000">
+        <div class="toaster">
+            <div class="browser-chrome www-usaa">
+                <img src="images/refapp.png" />
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- NEW YEAR!!! -->
+<!-- 
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-2000" id="fantasia-clip-1">
+        <div class="toaster video">
+            <video style="width:700px;" id="fantasia-1">
+              <source src="videos/fantasia-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            </video>
+        </div>
+        <script>
+            addStepCallback('fantasia-clip-1', function() {
+                document.getElementById('fantasia-1').play();
+            });
+        </script>
+    </div> -->
+<div class="step slide" data-rotate-x="50" data-scale="20" data-x="-110000" data-y="-10" data-z="4500">
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-6000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><script>
+YUI().use('tabview', function(Y) {
+    var tabview = new Y.TabView({
+        children: [{
+            label: 'Foo',
+            content: '<p>Foo content</p>'
+        }, {
+            label: 'Bar',
+            content: '<p>Bar content</p>'
+        }
+    });
+
+    tabview.render('#tabViewV1');
+});
+</script></textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-7000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><script>
+YUI().use('tabview', function(Y) {
+    var tabview = new Y.TabView({ /* Config */ });
+    tabview.render('#tabViewV1');
+});
+
+YUI().use('tabview', function(Y) {
+    var tabview = new Y.TabView({ /* Config */ });
+    tabview.render('#tabViewV2');
+});
+
+YUI().use('tabview', function(Y) {
+    var tabview = new Y.TabView({ /* Config */ });
+    tabview.render('#tabViewV3');
+});
+</script></textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-8000" id="vpp">
+        <div class="toaster">
+            <div class="browser-chrome www-usaa-reg">
+                <img src="images/vpp.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-9000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) {
+  var formatter = new Y.ClientInputFormatter({
+    "charsBlackList": "//",
+    "dataFormat": "/.*/",
+    "eventHandlerConfig": {},
+    "fieldId": "id48",
+    "controlKeysWhiteList": [8, 13],
+    "minLength": 0,
+    "charsWhiteList": "\\d",
+    "maxLength": -1
+  });
+  var formatterService = new Y.ClientInputFormatterService.addFormatter(formatter, {
+    "eventType": "blur",
+    "formatterArgs": "{}",
+    "selector": "id48"
+  });
+});
+</textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-10000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUI().use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+</textarea>
+        </div>
+    </div>
+    
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-11000">
+        <div class="toaster" style="text-align:center;">
+            <img src="images/dav-twitter.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-12000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI().use('tabview', 'ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) {
+  var tabview = new Y.TabView({ /* Config */ });
+  tabview.render('#tabViewV1');
+
+  var formatter = new Y.ClientInputFormatter({ /* Config */ });
+  var formatterService = new Y.ClientInputFormatterService.addFormatter(
+    formatter, 
+    { /* Config */ }
+  );
+
+  var formatter2 = new Y.ClientInputFormatter();
+  var formatterService2 = new Y.ClientInputFormatterService.addFormatter(
+    formatter2, 
+    { /* Config */ }
+  );
+});
+</textarea>
+        </div>
+    </div>
+
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-13000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">var YUInstance = YUI();
+
+YUInstance.use('tabview', function(Y) {
+  var tabview = new Y.TabView({ /* Config */ });
+  tabview.render('#tabViewV1');
+});
+
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) { 
+  var formatter = new Y.ClientInputFormatter({ /* Config */ });
+  var formatterService = new Y.ClientInputFormatterService.addFormatter(
+    formatter, 
+    { /* Config */ }
+  );
+});
+
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) {
+  var formatter = new Y.ClientInputFormatter({ /* Config */ });
+  var formatterService = new Y.ClientInputFormatterService.addFormatter(
+    formatter, 
+    { /* Config */ }
+  ); 
+});</textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-14000">
+        <div class="toaster photo alt3">
+            <div class="message">
+                http://jsperf.com/yuinstance/5
+            </div>
+            <img src="images/instance-perf-5.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-15000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">var YUInstance = YUI({
+  combine: true,
+  comboBase: 'https://s.usaa.com/inet/resources/aggregator?type=-min&',
+  root: 'p_/javascript/ent/thirdparty/yui/yui3_3/',
+  groups: {
+    usaa: {
+      root: 'k_',
+      modules: {
+        'ClientInputFormatter_js': {
+          type: 'js',
+          path: 'ClientInputFormatter',
+          requires: ['io', 'node', 'event', 'node-event-simulate']
+        },
+        'ClientInputFormatterService_js': {
+          type: 'js',
+          path: 'ClientInputFormatterService',
+          requires: ['node-focusmanager', 'io-base', 'node-base', 'overlay', 'event']
+        }
+      }
+  }
+},
+    fetchCSS: false
+});</textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-16000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI({ /* Main Config */ });
+
+// Set component config
+YUInstance.applyConfig({
+  fetchCSS: false,
+  filter:'raw'
+});
+// Use component
+YUInstance.use('tabview', function(Y) { /* Moar Code Here */ });
+
+// Set component config
+YUInstance.applyConfig({
+  combine: true
+});
+// Use component
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) {  });
+            </textarea>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-17000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">var YUInstance = YUI({ /* Main Config */ });
+// Store Default Config
+YUIDefaultConfig = YUInstance.config;  
+
+// Set component config
+YUInstance.applyConfig({ fetchCSS: false, filter:'raw' });
+// Use component
+YUInstance.use('tabview', function(Y) { /* Moar Code Here */ });
+// Reset to default config
+YUInstance.applyConfig(YUIDefaultConfig); 
+
+// Set component config
+YUInstance.applyConfig({ combine: true });
+// Use component
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) {  });
+// Reset to default config
+YUInstance.applyConfig(YUIDefaultConfig); 
+            </textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-18000">
+        <div class="toaster photo alt2">
+            <div class="message">
+                http://jsperf.com/yuinstance/7
+            </div>
+            <img src="images/instance-perf-7.png" />
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- New Year!! -->
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-100000" data-y="-10" data-z="4500">
+        <!-- <h1 class="year">2012</h1> -->
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-1000">
+        <div class="toaster photo">
+            <img src="images/mudman.jpg" />
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-2000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI.add('ClientInputFormatter_js', function (Y) {
+  var ClientInputFormatter = function (config) {       
+    var _dataFormat = new RegExp(config.dataFormat);
+    var _minLength = config.minLength;
+    var _maxLength = config.maxLength;
+    var _charsWhiteList = new RegExp(config.charsWhiteList);
+    var _controlKeysWhiteList = config.controlKeysWhiteList;
+    var _charsBlackList = new RegExp(config.charsBlackList);
+    var _fieldId = config.fieldId;
+
+    /* Moar Code Here */
+  };
+});
+</textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-3000">
+        <div class="toaster">
+            <div class="browser-chrome www-usaa-reg">
+                <img src="images/vpp.png" />
+            </div>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-4000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">var YUInstance = YUI(), YUIDefaultConfig = YUInstance.config;  
+YUInstance.applyConfig({fetchCSS:false,filter:'raw'});
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUInstance.config = YUIDefaultConfig;
+
+YUInstance.applyConfig({fetchCSS:false,filter:'raw'});
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUInstance.config = YUIDefaultConfig;
+
+YUInstance.applyConfig({fetchCSS:false,filter:'raw'});
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUInstance.config = YUIDefaultConfig;
+
+YUInstance.applyConfig({fetchCSS:false,filter:'raw'});
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUInstance.config = YUIDefaultConfig;
+
+YUInstance.applyConfig({fetchCSS:false,filter:'raw'});
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUInstance.config = YUIDefaultConfig;
+
+YUInstance.applyConfig({fetchCSS:false,filter:'raw'});
+YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js',
+YUInstance.config = YUIDefaultConfig;
+</textarea>
+        </div>
+    </div>
+
+
+
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-140000" data-y="-10" data-z="4500">
+     <!--    <h1 class="year">2008</h1> -->
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-140000" data-y="-2140" data-z="-1000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">// Search page for any elements with a class of 'tabs'
+// then build out the tabs from the surrounding HTML
+$(document).ready(function() {
+    $('.tabs').tabs();
+});</textarea>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-140000" data-y="-2140" data-z="-2000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Nunc tincidunt</a></li>
+    <li><a href="#tabs-2">Proin dolor</a></li>
+    <li><a href="#tabs-3">Aenean lacinia</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus.</p>
+  </div>
+  <div id="tabs-2">
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.</p>
+  </div>
+  <div id="tabs-3">
+    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>
+  </div>
+</div></textarea>
+        </div>
+    </div>
+
+
+
+    <!-- Jump back to 2012 here -->
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-5000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI.add('ClientInputFormatterManager_js', function(Y) {
+  Y.ClientInputFormatterManager = function (config) {
+    // Get all nodes that we want to format
+    var nodes = Y.all(config.filter);
+
+    // Instantiate formatters for each node found
+    nodes.each(createFormatter);
+
+    /* I can haz createFormatter code here */
+  };
+});
+</textarea>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-6000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUInstance.use('ClientInputFormatterManager_js', function(Y) {
+  Y.ClientInputFormatterManager({
+    filter: '.formattedInput'
+  });
+};
+</textarea>
+        </div>
+    </div>
+    
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-7000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><input type="text" class="formattedInput" /></textarea>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-8000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUInstance.use('ClientInputFormatter_js', function(Y) {
+  var formatter = new Y.ClientInputFormatter({
+    charsBlackList: "//",
+    dataFormat: "/.*/",
+    eventHandlerConfig: {},
+    fieldId: "id48",
+    controlKeysWhiteList: [8, 13],
+    minLength: 0,
+    charsWhiteList: "\\d",
+    maxLength: -1
+  });
+});
+</textarea>
+        </div>
+    </div>
+    
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-9000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><input type="text" class="zipcode formattedInput" 
+  data-format="^\d{5}(?:[-\s]\d{4})?$"
+  data-minLength="5"
+  maxlength="9" /></textarea>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-10000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">var createFormatter = function (el) {
+  var config = {};
+
+  // Pass in element so that events can be attached to it
+  config.el = el;
+
+  // Get any configs set through HTML5 data- attribute
+  var dataset = el.dataset;
+
+  // Use HTML data or fallback to a default
+  config.format = new RegExp(dataset.format) || /.*/;
+  config.minLength = dataset.minLength || 0;
+
+  // Access any other non-data attributes
+  config.maxLength = el.get('maxlength') || -1;
+
+  return new Y.ClientInputFormatter(config);
+};</textarea>
+        </div>
+    </div>
+
+
+
+<!-- New Year!! -->
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-130000" data-y="-10" data-z="4500">
+       <!--  <h1 class="year">2009</h1> -->
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-1000">
+        <div class="toaster browser-chrome www-zakas no-scroll">
+            <img src="images/zakas.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-2000">
+        <div class="toaster photo alt">
+            <img src="images/teachers.jpg" width="850" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-3000">
+        <div class="toaster photo">
+            <img src="images/students.jpg" />
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-11000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">Y.on('homework', student1, gradePaper);
+Y.on('homework', student2, gradePaper);
+Y.on('homework', student3, gradePaper);
+Y.on('homework', student4, gradePaper);
+Y.on('homework', student5, gradePaper);
+Y.on('homework', student6, gradePaper);
+Y.on('homework', student7, gradePaper);
+Y.on('homework', student8, gradePaper);
+Y.on('homework', student9, gradePaper);
+Y.on('homework', student10, gradePaper);
+Y.on('homework', student11, gradePaper);
+Y.on('homework', student12, gradePaper);
+</textarea>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-11000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">Y.on('homework', teacher, gradePaper);
+</textarea>
+        </div>
+    </div>
+
+
+
+    <!-- Jump back to 2012 -->
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-11000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUInstance.use('ClientInputFormatterManager_js', function(Y) {
+  Y.ClientInputFormatterManager({
+    filter: '.formattedInput'
+  });
+};
+</textarea>
+        </div>
+    </div>
+
+    <!-- TODO add Event Delegation Stuff -->
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-12000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">YUI.add('ClientInputFormatterManager_js', function(Y) {
+  Y.ClientInputFormatterManager = function (config) {
+    var handleBlur = function (ev) {
+        var config = {};
+
+        config.el = this;
+
+        /* Build rest of config from HTML data */
+
+        // Pass config to function for formatting
+        formatInput(config);
+    };
+
+    // TODO Confirm Y.delegate code here
+    Y.delegate(config.filter, "blur", handleBlur);
+  };
+});</textarea>
+        </div>
+    </div>
+
+
+
+
+
+<!-- New Year!! -->
+
+    <div class="step slide" data-rotate-x="50" data-scale="20" data-x="-90000" data-y="-10" data-z="4500">
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-1000">
+        <div class="toaster photo alt2">
+            <div class="message">
+                Don't Repeat Yourself. Even in generated code.
+            </div>
+            <img src="images/dry.jpg" width="800" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-2000">
+        <div class="toaster photo alt3">
+            <div class="message">
+                View the generated source
+            </div>
+            <img src="images/source.png" width="800" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-3000">
+        <div class="toaster photo alt2">
+            <div class="message">
+                Performance test with real-world scenarios
+            </div>
+            <img src="images/sandbox.jpg" width="800" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-4000">
+        <div class="toaster photo alt3">
+            <div class="message">
+                Scale your performance tests
+            </div>
+            <img src="images/sun-scale.jpg" width="850" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-5000">
+        <div class="toaster photo alt3">
+            <div class="message">
+                Always keep improving.
+            </div>
+            <img src="images/flex.jpg" width="850" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-6000">
+        <div class="toaster">
+            <div class="message">
+                <h1 style="font-size: 42px;">Photo Credits</h1>
+                <ul style="font-size: 32px;">
+                    <li>http://www.flickr.com/photos/usnationalarchives/5506533458/</li>
+                    <li>http://www.flickr.com/photos/ndguard/6431423091/</li>
+                    <li>http://www.flickr.com/photos/mateus27_24-25/6849107264/</li>
+                    <li>http://www.flickr.com/photos/ndguard/6431816767/in/set-72157628220858473/</li>
+                    <li>http://www.flickr.com/photos/mindus/5301410339/</li>
+                    <li>http://www.flickr.com/photos/victoriabernal/6403776731/</li>
+                    <li>http://www.flickr.com/photos/coachjeff/4323983731/</li>
+                    <li>http://www.flickr.com/photos/andedam/2650440216/</li>
+                    <li>http://www.flickr.com/photos/dvids/7462046470/</li>
+                    <li>http://www.flickr.com/photos/pburch_tulane/4193037541/</li>
+                </ul>
+                <p>Apache Wicket logo used with permission from Apache Software Foundation.<p>
+            </div>
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-7000">
+        <div class="toaster photo alt2">
+            <div class="message">
+                To our Military Heroes. Thank You.
+            </div>
+            <img src="images/kitty-army.jpg" />
+        </div>
+    </div>
+
+<!-- Other years -->
+
+    <div class="step slide" data-rotate-x="90" data-scale="10" data-x="-510000" data-y="-10" data-z="7500">
+        <div class="years">
+            <span class="year">1922</span><!-- 510000 -->
+            <span class="year">1923</span>
+            <span class="year">1924</span>
+            <span class="year">1925</span>
+            <span class="year">1928</span>
+            <span class="year">1930</span>
+            <span class="year">1933</span><!-- 440000 -->
+            <span class="year">1936</span>
+            <span class="year">1940</span>
+            <span class="year">1945</span>
+            <span class="year">1951</span>
+            <span class="year">1957</span>
+            <span class="year">1958</span>
+            <span class="year">1959</span>
+            <span class="year">1960</span>
+            <span class="year">1963</span>
+            <span class="year">1964</span>
+            <span class="year">1969</span>
+            <span class="year">1974</span>
+            <span class="year">1977</span>
+            <span class="year">1982</span>
+            <span class="year">1984</span>
+            <span class="year">1987</span>
+            <span class="year">1990</span>
+            <span class="year">1992</span><!-- 270000 -->
+            <span class="year">1995</span>
+            <span class="year">1997</span>
+            <span class="year">1998</span>
+            <span class="year">1999</span>
+            <span class="year">2000</span>
+            <span class="year">2001</span><!-- 210000 -->
+            <span class="year">2002</span>
+            <span class="year">2003</span>
+            <span class="year">2004</span>
+            <span class="year">2005</span>
+            <span class="year">2006</span>
+            <span class="year">2007</span>
+            <span class="year">2008</span>  <!-- 140000 -->
+            <span class="year">2009</span>
+            <span class="year">2010</span>
+            <span class="year">2011</span>
+            <span class="year">2012</span>            
+            <span class="year">Summing up...</span>
+        </div>
+    </div>
+
+    <div class="step slide" data-rotate-x="90" data-scale="150" data-x="-150000">
+        <div class="bgGradient"></div>
+    </div>
+    
+    <div class="step slide" data-rotate-x="90" data-scale="40" data-x="-150000" data-z="-2500" data-y="-1">
+        <div class="talk-title">
+            <p style="position: absolute;left:-100px;"><img src="images/yui-conf-2012-logo.png" width="400" /></p>
+            <h1 style="margin-left:285px;">Scaling YUI in the Enterprise</h1>
+            <p style="margin-left:325px;">Kevin Lamping, USAA</p>
+            <p style="margin-left:330px;">@klamping</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/impress.js"></script>
+<script>
+//    var socket = io.connect('http://localhost:8080');
+    var api = impress();
+    api.init();
+  /*  socket.on('impress:stepEnter', function (data) {
+        console.log(data);
+        api.next();
+        //socket.emit('my other event', { my: 'data' });
+    });*/
+
+    /* Build out our code views */
+    var cms = document.getElementsByClassName('code');
+    for (var i = 0; i < cms.length; i++) {
+        var myCodeMirror = CodeMirror.fromTextArea(cms[i], {
+            mode: cms[i].dataset.mode,
+            theme: "cobalt"
+        });
+    }
+</script>
+
+</body>
+</html>
