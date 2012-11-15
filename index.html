@@ -39,6 +39,8 @@
             stepCallbacks[ev.srcElement.id]();
         }
     }, false);*/
+
+
     </script>
 
 </head>
@@ -160,16 +162,16 @@
             <img src="images/logo-wicket.png" width="500" />
         </div>
     </div>
-
+<!-- 
     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-2000">
         <div class="toaster">
             <div class="browser-chrome www-yui2-home">
                 <img src="images/yui2.png" />
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-2000">
         <div class="toaster">
             <textarea class="code" data-mode="clike">TabView tabViewV1 = new TabView("tabViewV1", true);
 add(tabViewV1);
@@ -188,14 +190,14 @@ tabViewV1.addTab(
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-4000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
         <div class="toaster photo">
             <img src="images/java-js.jpg" width="800" />
             <!-- http://www.morguefile.com/archive/display/174528 -->
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-5000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-4000">
         <div class="toaster">
             <textarea class="code" data-mode="text/html"><!doctype>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -209,7 +211,7 @@ tabViewV1.addTab(
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-2000">
         <div class="toaster">
             <textarea class="code" data-mode="clike">TabView tabViewV1 = new TabView("tabViewV1", true);
 add(tabViewV1);
@@ -229,7 +231,7 @@ tabViewV1.addTab(
     </div>
 
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-6000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-5000">
         <div class="toaster">
             <div class="browser-chrome www-usaa">
                 <img src="images/refapp.png" />
@@ -459,7 +461,7 @@ YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', func
 
     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-16000">
         <div class="toaster">
-            <textarea class="code" data-mode="javascript">YUI({ /* Main Config */ });
+            <textarea class="code" data-mode="javascript">var YUInstance = YUI({ /* Main Config */ });
 
 // Set component config
 YUInstance.applyConfig({
@@ -483,21 +485,21 @@ YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', func
         <div class="toaster">
             <textarea class="code" data-mode="javascript">var YUInstance = YUI({ /* Main Config */ });
 // Store Default Config
-YUIDefaultConfig = YUInstance.config;  
+var YUIDefaultConfig = YUInstance.config;  
 
 // Set component config
 YUInstance.applyConfig({ fetchCSS: false, filter:'raw' });
 // Use component
 YUInstance.use('tabview', function(Y) { /* Moar Code Here */ });
 // Reset to default config
-YUInstance.applyConfig(YUIDefaultConfig); 
+YUInstance.config = YUIDefaultConfig;
 
 // Set component config
 YUInstance.applyConfig({ combine: true });
 // Use component
 YUInstance.use('ClientInputFormatter_js', 'ClientInputFormatterService_js', function(Y) {  });
 // Reset to default config
-YUInstance.applyConfig(YUIDefaultConfig); 
+YUInstance.config = YUIDefaultConfig;
             </textarea>
         </div>
     </div>
@@ -531,7 +533,7 @@ YUInstance.applyConfig(YUIDefaultConfig);
      <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-2000">
         <div class="toaster">
             <textarea class="code" data-mode="javascript">YUI.add('ClientInputFormatter_js', function (Y) {
-  var ClientInputFormatter = function (config) {       
+  Y.ClientInputFormatter = function (config) {       
     var _dataFormat = new RegExp(config.dataFormat);
     var _minLength = config.minLength;
     var _maxLength = config.maxLength;
@@ -604,7 +606,7 @@ $(document).ready(function() {
 
      <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-140000" data-y="-2140" data-z="-2000">
         <div class="toaster">
-            <textarea class="code" data-mode="text/html"><div id="tabs">
+            <textarea class="code" data-mode="text/html"><div class="tabs">
   <ul>
     <li><a href="#tabs-1">Nunc tincidunt</a></li>
     <li><a href="#tabs-2">Proin dolor</a></li>
@@ -620,6 +622,16 @@ $(document).ready(function() {
     <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>
   </div>
 </div></textarea>
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-140000" data-y="-2140" data-z="-3000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><div class="tabs"><!-- Tabview Pleaze --></div>
+
+<div class="tabs"><!-- Another Tabview Pleaze --></div>
+
+<div class="tabs"><!-- I Can Haz Another? --></div></textarea>
         </div>
     </div>
 
@@ -693,7 +705,7 @@ $(document).ready(function() {
             <textarea class="code" data-mode="javascript">var createFormatter = function (el) {
   var config = {};
 
-  // Pass in element so that events can be attached to it
+  // Pass in element for event handling
   config.el = el;
 
   // Get any configs set through HTML5 data- attribute
@@ -737,7 +749,43 @@ $(document).ready(function() {
         </div>
     </div>
 
-     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-11000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-4000">
+        <div class="toaster photo alt2">
+            <img src="images/ev1.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-5000">
+        <div class="toaster photo alt3">
+            <img src="images/ev2.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-6000">
+        <div class="toaster photo alt2">
+            <img src="images/ev3.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-7000">
+        <div class="toaster photo alt3">
+            <img src="images/ev4.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-8000">
+        <div class="toaster photo alt2">
+            <img src="images/ev5.png" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-9000">
+        <div class="toaster photo alt3">
+            <img src="images/ev6.png" />
+        </div>
+    </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-10000">
         <div class="toaster">
             <textarea class="code" data-mode="javascript">Y.on('homework', student1, gradePaper);
 Y.on('homework', student2, gradePaper);
@@ -751,16 +799,43 @@ Y.on('homework', student9, gradePaper);
 Y.on('homework', student10, gradePaper);
 Y.on('homework', student11, gradePaper);
 Y.on('homework', student12, gradePaper);
+Y.on('homework', student13, gradePaper);
+Y.on('homework', student14, gradePaper);
+Y.on('homework', student15, gradePaper);
+Y.on('homework', student16, gradePaper);
+Y.on('homework', student17, gradePaper);
+Y.on('homework', student18, gradePaper);
 </textarea>
         </div>
     </div>
 
-     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-11000">
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-11000">
         <div class="toaster">
             <textarea class="code" data-mode="javascript">Y.on('homework', teacher, gradePaper);
 </textarea>
         </div>
     </div>
+
+     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-130000" data-y="-2140" data-z="-12000">
+        <div class="toaster">
+            <textarea class="code" data-mode="javascript">var gradePaper = function (ev) {
+  var student = ev.target;
+
+  switch (student.name) {
+    case "Bob":
+      return "F";
+      break;
+    case "Joe":
+      return "A+";
+      break;
+    default:
+      return "B";
+  }
+};
+</textarea>
+        </div>
+    </div>
+
 
 
 
@@ -777,24 +852,21 @@ Y.on('homework', student12, gradePaper);
         </div>
     </div>
 
-    <!-- TODO add Event Delegation Stuff -->
      <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-100000" data-y="-2140" data-z="-12000">
         <div class="toaster">
             <textarea class="code" data-mode="javascript">YUI.add('ClientInputFormatterManager_js', function(Y) {
   Y.ClientInputFormatterManager = function (config) {
-    var handleBlur = function (ev) {
-        var config = {};
+    Y.delegate("blur", function (ev) {
+      var settings = {};
 
-        config.el = this;
+      settings.el = this;
 
-        /* Build rest of config from HTML data */
+      /* Build rest of settings from HTML data */
+      settings.maxLength = this.get('maxlength') || -1;
 
-        // Pass config to function for formatting
-        formatInput(config);
-    };
-
-    // TODO Confirm Y.delegate code here
-    Y.delegate(config.filter, "blur", handleBlur);
+      // Pass settings to function for formatting
+      formatInput(settings);
+    }, config.root, config.filter);
   };
 });</textarea>
         </div>
@@ -845,16 +917,16 @@ Y.on('homework', student12, gradePaper);
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-5000">
+<!--     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-5000">
         <div class="toaster photo alt3">
             <div class="message">
                 Always keep improving.
             </div>
             <img src="images/flex.jpg" width="850" />
         </div>
-    </div>
+    </div> -->
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-6000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-5000">
         <div class="toaster">
             <div class="message">
                 <h1 style="font-size: 42px;">Photo Credits</h1>
@@ -875,12 +947,20 @@ Y.on('homework', student12, gradePaper);
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-7000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-6000">
         <div class="toaster photo alt2">
             <div class="message">
                 To our Military Heroes. Thank You.
             </div>
             <img src="images/kitty-army.jpg" />
+        </div>
+    </div>
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-7000">
+        <div class="toaster photo alt3">
+            <div class="message" style="font-size: 150px; line-height: 1.3;">
+                <h1>Questions?</h1>
+            </div>
         </div>
     </div>
 
@@ -968,6 +1048,18 @@ Y.on('homework', student12, gradePaper);
             theme: "cobalt"
         });
     }
+window.onload = function () {
+    document.querySelector('#impress').addEventListener("click", function(ev){
+        api.next();
+    });
+    document.querySelector('#impress').addEventListener("contextmenu", function(ev){
+        api.prev();
+        ev.preventDefault();
+    });
+
+     //javascript:document.querySelector('body').webkitRequestFullScreen();
+}
+
 </script>
 
 </body>
