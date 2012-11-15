@@ -54,7 +54,11 @@ i, em { font-style: italic }
     -ms-box-sizing:     border-box;
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
-
+    
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
 }
 .slide {
     /*overflow: hidden;*/
