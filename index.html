@@ -112,8 +112,8 @@
     </div>
 
     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-110000" data-y="-2140" data-z="-1000">
-        <div class="toaster photo">
-            <img src="images/fear-darwin-smaller.jpg" />
+        <div class="toaster photo alt3">
+            <img src="images/scale-model.jpg" width="800" />
         </div>
     </div>
 
@@ -171,7 +171,36 @@
         </div>
     </div> -->
 
+
     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-2000">
+        <div class="toaster">
+            <div class="browser-chrome www-usaa">
+                <img src="images/refapp.png" />
+            </div>
+        </div>
+    </div>
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
+        <div class="toaster">
+            <textarea class="code" data-mode="text/html"><script>
+YUI().use('tabview', function(Y) {
+    var tabview = new Y.TabView({
+        children: [{
+            label: 'Foo',
+            content: '<p>Foo content</p>'
+        }, {
+            label: 'Bar',
+            content: '<p>Bar content</p>'
+        }
+    });
+
+    tabview.render('#tabViewV1');
+});
+</script></textarea>
+        </div>
+    </div>
+
+
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-4000">
         <div class="toaster">
             <textarea class="code" data-mode="clike">TabView tabViewV1 = new TabView("tabViewV1", true);
 add(tabViewV1);
@@ -190,14 +219,14 @@ tabViewV1.addTab(
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-3000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-5000">
         <div class="toaster photo">
             <img src="images/java-js.jpg" width="800" />
             <!-- http://www.morguefile.com/archive/display/174528 -->
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-4000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-6000">
         <div class="toaster">
             <textarea class="code" data-mode="text/html"><!doctype>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -211,7 +240,7 @@ tabViewV1.addTab(
         </div>
     </div>
 
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-2000">
+    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-7000">
         <div class="toaster">
             <textarea class="code" data-mode="clike">TabView tabViewV1 = new TabView("tabViewV1", true);
 add(tabViewV1);
@@ -229,16 +258,6 @@ tabViewV1.addTab(
             </textarea>
         </div>
     </div>
-
-
-    <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-120000" data-y="-2140" data-z="-5000">
-        <div class="toaster">
-            <div class="browser-chrome www-usaa">
-                <img src="images/refapp.png" />
-            </div>
-        </div>
-    </div>
-
 
 
 
@@ -958,8 +977,9 @@ Y.on('homework', student18, gradePaper);
 
     <div class="step slide slide-toaster" data-rotate-x="30" data-scale="10" data-x="-90000" data-y="-2140" data-z="-7000">
         <div class="toaster photo alt3">
-            <div class="message" style="font-size: 150px; line-height: 1.3;">
-                <h1>Questions?</h1>
+            <div class="message">
+                <h1 style="font-size: 150px; line-height: 1.3;">Questions?</h1>
+                <p style="margin-top:30px; text-align: left;">Kevin Lamping, USAA <span style="float:right;">@klamping</span></p>
             </div>
         </div>
     </div>
@@ -1049,8 +1069,18 @@ Y.on('homework', student18, gradePaper);
         });
     }
 window.onload = function () {
+    window.lastClick = 0;
+
     document.querySelector('#impress').addEventListener("click", function(ev){
-        api.next();
+        if (Date.now() - window.lastClick < 500) {
+            api.prev();
+            api.prev();
+            ev.preventDefault();
+            ev.stopPropagation();
+        } else {
+            api.next();   
+            window.lastClick = Date.now();
+        }
     });
     document.querySelector('#impress').addEventListener("contextmenu", function(ev){
         api.prev();
